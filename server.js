@@ -18,6 +18,12 @@ mongoose.connection
 //APP OBJ
 const app = express();
 
+//MIDDLEWARE
+app.use(morgan("dev"));
+app.use("/static", express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
+
 //ROUTES
 app.get("/", (req, res) => {
   res.send("It's working");

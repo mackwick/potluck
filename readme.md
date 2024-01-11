@@ -28,35 +28,40 @@
 
 ## Route Map
 
-| Route Name     | Endpoint         | Method | Description                                                                |
-| -------------- | ---------------- | ------ | -------------------------------------------------------------------------- |
-| Recipe Index   | /potluck         | GET    | Renders all recipe names and pics on a page                                |
-| New Recipe     | /potluck/new     | GET    | Renders a form to add a new recipe                                         |
-| Destroy Recipe | /potluck/id      | DELETE | Deletes a recipe                                                           |
-| Update Recipe  | /potluck/id      | PUT    | Uses the edit form to update an existing recipe                            |
-| Create Recipe  | /potluck         | POST   | Uses the new form to add a recipe to the db                                |
-| Edit Recipe    | /potluck/id/edit | GET    | Renders a form to edit an existing recipe                                  |
-| Seed Recipes   | /potluck/seed    | GET    | Adds 5-10 recipes to an account (ideally when someone creates an account?) |
-| Show Recipe    | /potluck/id      | GET    | Renders the details for a single recipe                                    |
-| STRETCH ROUTES |                  |        |                                                                            |
-| Signup Form    | /user/signup     | GET    | Render signup form                                                         |
-| Signup User    | /user/signup     | POST   | Use signup form to create user                                             |
-| Login Form     | /user/login      | GET    | Render login form                                                          |
-| Login User     | /user/login      | POST   | Log in user based on login form                                            |
-| Logout User    | /user/logout     | GET    | Log out user                                                               |
+| Route Name     | Endpoint     | Method | Description                                                                |
+| -------------- | ------------ | ------ | -------------------------------------------------------------------------- |
+| Seed Recipes   | /            | GET    | Adds 10 recipes to the database                                            |
+| Recipe Index   | /            | GET    | Renders all recipe names and pics on a page                                |
+| New Recipe     | /new         | GET    | Renders a form to add a new recipe                                         |
+| Destroy Recipe | /id          | DELETE | Deletes a recipe                                                           |
+| Update Recipe  | /id          | PUT    | Uses the edit form to update an existing recipe                            |
+| Create Recipe  | /            | POST   | Uses the new form to add a recipe to the db                                |
+| Edit Recipe    | /id/edit     | GET    | Renders a form to edit an existing recipe                                  |
+| Seed Recipes   | /seed        | GET    | Adds 5-10 recipes to an account (ideally when someone creates an account?) |
+| Show Recipe    | /id          | GET    | Renders the details for a single recipe                                    |
+| STRETCH ROUTES |              |        |                                                                            |
+| Signup Form    | /user/signup | GET    | Render signup form                                                         |
+| Signup User    | /user/signup | POST   | Use signup form to create user                                             |
+| Login Form     | /user/login  | GET    | Render login form                                                          |
+| Login User     | /user/login  | POST   | Log in user based on login form                                            |
+| Logout User    | /user/logout | GET    | Log out user                                                               |
 
 ## Design Mockups (Desktop + Mobile)
 
+!(Potluck Color Scheme)(https://imgur.com/ZxaAL7F)
+
 ##### Mobile Design
 
-![Mobile Design Mockup](./url-to-picture.jpg)
+![Mobile Design Mockup - Index Page](https://imgur.com/BxKaj5B)
+
+![Mobile Design Mockup - Show Page](https://imgur.com/0DbyzDM)
 
 ##### Desktop Design
 
-![Desktop Design Mockup](./url-to-picture.jpg)
+![Desktop Design Mockup - Index Page](https://imgur.com/qwHhBRo)
+
+![Desktop Design Mockup - Show Page](https://imgur.com/Iqc16Qe)
 
 ## ERD (Entity Relationship Diagram)
 
-This should be a diagram showing your models and any relationships between them.
-
-![Entity Relationship Diagram](./url-to-picture.jpg)
+![Entity Relationship Diagram](https://imgur.com/rgsIey5)
