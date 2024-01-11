@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs")%>
+  <body>
+    <%- include("./partials/header.ejs")%>
+    <main>
+      <div id="show-container">
+        <h2><%= recipe.name %></h2>
+
+        <% if(recipe.img != null) { %>
+        <img src="<%= recipe.img %>" />
+        <% } %> <% if(recipe.img2 != null) { %>
+        <img src="<%= recipe.img2 %>" />
+        <% } %> <% if(recipe.ingredients != null) { %>
+        <ul id="ingredients">
+          <% const ingArr = recipe.ingredients.split(", "); %> <%
+          ingArr.forEach(ing => { %>
+          <li><%= ing %></li>
+          <% }); %>
+        </ul>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>
