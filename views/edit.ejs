@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs")%>
+  <body>
+    <%- include("./partials/header.ejs")%>
+    <main>
+      <fieldset id="edit">
+        <legend>Update the recipe for <%= editRecipe.name %>!</legend>
+        <p>
+          This can be the whole shebang with detailed instructions, a screenshot
+          of a text your mom sent, a link to someone else's creation. Whatever
+          you want to keep track of!
+        </p>
+        <form action="/<%= editRecipe._id %>?_method=PUT" method="post">
+          <label
+            >Recipe Name (this one is required):
+            <input type="text" name="name" value="<%= editRecipe.name %>"
+          /></label>
+          <label
+            >Picture 1 (a link ending in jpeg or png - Hint: upload it to imgur
+            and paste the image address):
+            <input type="text" name="img" value="<%= editRecipe.img %>"
+          /></label>
+          <label
+            >Picture 2:<input
+              type="text"
+              name="img2"
+              value="<%= editRecipe.img2 %>"
+          /></label>
+          <label
+            >The Ingredients (separate each one by a comma):<input
+              type="text"
+              name="ingredients"
+              value="<%= editRecipe.ingredients %>"
+          /></label>
+          <label
+            >The Instructions (separate each step by a semi-colon):<input
+              type="text"
+              name="instructions"
+              value="<%= editRecipe.instructions %>"
+          /></label>
+          <label
+            >A Link to a Dish You Love:<input
+              type="text"
+              name="link"
+              value="<%= editRecipe.link %>"
+          /></label>
+          <label
+            >Anything you want to add?
+            <input type="text" name="notes" value="<%= editRecipe.notes %>"
+          /></label>
+          <button>Edit Recipe</button>
+        </form>
+      </fieldset>
+    </main>
+  </body>
+</html>

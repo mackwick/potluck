@@ -28,13 +28,14 @@
           <% }); %>
         </ol>
         <% } %> <% if(recipe.link != null && recipe.link != "") { %>
-        <a href="<%= recipe.link %>"
+        <a href="<%= recipe.link %>" target="_blank"
           >See the full <%= recipe.name %> recipe here.</a
         >
         <% } %> <% if(recipe.notes != null && recipe.notes != "") { %>
         <h6>Some thoughts</h6>
         <p><%= recipe.notes %></p>
         <% } %>
+        <a href="/<%= recipe._id %>/edit"><button>Edit Recipe</button></a>
       </div>
     </main>
   </body>
