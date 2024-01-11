@@ -95,12 +95,24 @@ router.get("/", async (req, res) => {
 });
 
 //NEW
+router.get("/new", (req, res) => {
+  res.render("new.ejs");
+});
 
 //DELETE
 
 //UPDATE
 
 //CREATE
+router.post("/", async (req, res) => {
+  try {
+    const newRecipe = await Recipe.create(req.body);
+    res.redirect("/");
+  } catch (error) {
+    res.status(400).send("There was an error. Check logs for details");
+    console.log(error.message);
+  }
+});
 
 //EDIT
 

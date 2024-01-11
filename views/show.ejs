@@ -7,29 +7,31 @@
       <div id="show-container">
         <h2><%= recipe.name %></h2>
 
-        <% if(recipe.img != null) { %>
+        <% if(recipe.img != null && recipe.img != "") { %>
         <img src="<%= recipe.img %>" />
-        <% } %> <% if(recipe.img2 != null) { %>
+        <% } %> <% if(recipe.img2 != null && recipe.img2 != "") { %>
         <img src="<%= recipe.img2 %>" />
-        <% } %> <% if(recipe.ingredients != null) { %>
+        <% } %> <% if(recipe.ingredients != null && recipe.ingredients != "") {
+        %>
         <ul id="ingredients">
           <% const ingArr = recipe.ingredients.split(", "); %> <%
           ingArr.forEach(ing => { %>
           <li><%= ing %></li>
           <% }); %>
         </ul>
-        <% } %> <% if(recipe.instructions != null) { %>
+        <% } %> <% if(recipe.instructions != null && recipe.instructions != "")
+        { %>
         <ol id="instructions">
           <% const instArr = recipe.instructions.split("; "); %> <%
           instArr.forEach(inst => { %>
           <li><%= inst %></li>
           <% }); %>
         </ol>
-        <% } %> <% if(recipe.link != null) { %>
+        <% } %> <% if(recipe.link != null && recipe.link != "") { %>
         <a href="<%= recipe.link %>"
           >See the full <%= recipe.name %> recipe here.</a
         >
-        <% } %> <% if(recipe.notes != null) { %>
+        <% } %> <% if(recipe.notes != null && recipe.notes != "") { %>
         <h6>Some thoughts</h6>
         <p><%= recipe.notes %></p>
         <% } %>
