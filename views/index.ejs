@@ -8,7 +8,7 @@
             <% for (let i=0; i<recipes.length; i++) { %>
                 <a href="/<%= recipes[i]._id %>">
                     <div id="one-recipe">
-                        <% if (recipes[i].img != null){ %>
+                        <% if (recipes[i].img != null && recipes[i].img != ""){ %>
                         <img src="<%= recipes[i].img %>">
                         <%}%>
                         <h2><%= recipes[i].name %></h2>
