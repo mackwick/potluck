@@ -106,6 +106,10 @@ router.get("/new", (req, res) => {
 });
 
 //DELETE
+router.delete("/:id", async (req, res) => {
+  await Recipe.findByIdAndDelete(req.params.id);
+  res.redirect("/");
+});
 
 //UPDATE
 router.put("/:id", async (req, res) => {
