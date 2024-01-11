@@ -52,16 +52,16 @@
 
 ##### Mobile Design
 
-![Mobile Design Mockup - Index Page](https://imgur.com/BxKaj5B)
+![Mobile Design Mockup - Index Page](https://i.imgur.com/O1gPDEk.png)
 
-![Mobile Design Mockup - Show Page](https://imgur.com/0DbyzDM)
+![Mobile Design Mockup - Show Page](https://i.imgur.com/1vHmGcx.png)
 
 ##### Desktop Design
 
-![Desktop Design Mockup - Index Page](https://imgur.com/qwHhBRo)
+![Desktop Design Mockup - Index Page](https://i.imgur.com/4A1FwhW.png)
 
-![Desktop Design Mockup - Show Page](https://imgur.com/Iqc16Qe)
+![Desktop Design Mockup - Show Page](https://i.imgur.com/7VWOOFO.png)
 
 ## ERD (Entity Relationship Diagram)
 
-![Entity Relationship Diagram](https://imgur.com/rgsIey5)
+![Entity Relationship Diagram](https://i.imgur.com/PJf1Ys0.jpg)
