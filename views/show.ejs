@@ -18,6 +18,20 @@
           <li><%= ing %></li>
           <% }); %>
         </ul>
+        <% } %> <% if(recipe.instructions != null) { %>
+        <ol id="instructions">
+          <% const instArr = recipe.instructions.split("; "); %> <%
+          instArr.forEach(inst => { %>
+          <li><%= inst %></li>
+          <% }); %>
+        </ol>
+        <% } %> <% if(recipe.link != null) { %>
+        <a href="<%= recipe.link %>"
+          >See the full <%= recipe.name %> recipe here.</a
+        >
+        <% } %> <% if(recipe.notes != null) { %>
+        <h6>Some thoughts</h6>
+        <p><%= recipe.notes %></p>
         <% } %>
       </div>
     </main>
