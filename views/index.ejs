@@ -10,7 +10,11 @@
                     <div id="one-recipe">
                         <% if (recipes[i].img != null && recipes[i].img != ""){ %>
                         <img src="<%= recipes[i].img %>">
-                        <%}%>
+                        <%} else {%>
+                            <div id="noImg">
+
+                            </div>
+                          <% }%>
                         <h2><%= recipes[i].name %></h2>
                     </div>
                 </a>
