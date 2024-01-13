@@ -3,7 +3,6 @@
   <%- include("./partials/head.ejs")%>
   <body>
     <%- include("./partials/header.ejs")%>
-    <main>
         <div id="recipe-container">
             <% for (let i=0; i<recipes.length; i++) { %>
                 <a href="/<%= recipes[i]._id %>">
@@ -12,7 +11,7 @@
                         <img src="<%= recipes[i].img %>">
                         <%} else {%>
                             <div id="noImg">
-
+                              no image
                             </div>
                           <% }%>
                         <h2><%= recipes[i].name %></h2>
@@ -20,6 +19,5 @@
                 </a>
             <% } %>
           </div>
-    </main>
   </body>
 </html>
