@@ -5,40 +5,47 @@
     <%- include("./partials/header.ejs")%>
     <main>
       <div id="show-container">
-        <h2><%= recipe.name %></h2>
+        <div id="left-side">
+          <% if(recipe.img != null && recipe.img != "") { %>
+          <img src="<%= recipe.img %>" />
+          <% } %> <% if(recipe.img2 != null && recipe.img2 != "") { %>
+          <img src="<%= recipe.img2 %>" />
+          <% } %>
+        </div>
 
-        <% if(recipe.img != null && recipe.img != "") { %>
-        <img src="<%= recipe.img %>" />
-        <% } %> <% if(recipe.img2 != null && recipe.img2 != "") { %>
-        <img src="<%= recipe.img2 %>" />
-        <% } %> <% if(recipe.ingredients != null && recipe.ingredients != "") {
-        %>
-        <ul id="ingredients">
-          <% const ingArr = recipe.ingredients.split(", "); %> <%
-          ingArr.forEach(ing => { %>
-          <li><%= ing %></li>
-          <% }); %>
-        </ul>
-        <% } %> <% if(recipe.instructions != null && recipe.instructions != "")
-        { %>
-        <ol id="instructions">
-          <% const instArr = recipe.instructions.split("; "); %> <%
-          instArr.forEach(inst => { %>
-          <li><%= inst %></li>
-          <% }); %>
-        </ol>
-        <% } %> <% if(recipe.link != null && recipe.link != "") { %>
-        <a href="<%= recipe.link %>" target="_blank"
-          >See the full <%= recipe.name %> recipe here.</a
-        >
-        <% } %> <% if(recipe.notes != null && recipe.notes != "") { %>
-        <h6>Some thoughts</h6>
-        <p><%= recipe.notes %></p>
-        <% } %>
-        <a href="/<%= recipe._id %>/edit"><button>Edit Recipe</button></a>
-        <form action="/<%= recipe.id %>?_method=DELETE" method="post">
-          <input type="submit" value="Delete Recipe" />
-        </form>
+        <div id="right-side">
+          <h2><%= recipe.name %></h2>
+          <% if(recipe.ingredients != null && recipe.ingredients != "") { %>
+          <h6>Ingredients</h6>
+          <ul id="ingredients">
+            <% const ingArr = recipe.ingredients.split(", "); %> <%
+            ingArr.forEach(ing => { %>
+            <li><%= ing %></li>
+            <% }); %>
+          </ul>
+          <% } %> <% if(recipe.instructions != null && recipe.instructions !=
+          "") { %>
+          <h6>Instructions</h6>
+          <ol id="instructions">
+            <% const instArr = recipe.instructions.split("; "); %> <%
+            instArr.forEach(inst => { %>
+            <li><%= inst %></li>
+            <% }); %>
+          </ol>
+          <% } %> <% if(recipe.link != null && recipe.link != "") { %>
+          <h6>Link</h6>
+          <a href="<%= recipe.link %>" target="_blank"
+            >See the full <%= recipe.name %> recipe here.</a
+          >
+          <% } %> <% if(recipe.notes != null && recipe.notes != "") { %>
+          <h6>Some thoughts</h6>
+          <p><%= recipe.notes %></p>
+          <% } %>
+          <a href="/<%= recipe._id %>/edit"><button>Edit Recipe</button></a>
+          <form action="/<%= recipe.id %>?_method=DELETE" method="post">
+            <input type="submit" value="Delete Recipe" />
+          </form>
+        </div>
       </div>
     </main>
   </body>
