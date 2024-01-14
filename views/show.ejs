@@ -35,16 +35,18 @@
           <% } %> <% if(recipe.link != null && recipe.link != "") { %>
           <h6>Link</h6>
           <a href="<%= recipe.link %>" target="_blank"
-            >See the full <%= recipe.name %> recipe here.</a
+            >See the full recipe <span id="color">here</span>.</a
           >
           <% } %> <% if(recipe.notes != null && recipe.notes != "") { %>
           <h6>Some thoughts</h6>
           <p><%= recipe.notes %></p>
           <% } %>
-          <a href="/<%= recipe._id %>/edit"><button>Edit Recipe</button></a>
-          <form action="/<%= recipe.id %>?_method=DELETE" method="post">
-            <input type="submit" value="Delete Recipe" />
-          </form>
+          <div id="actions">
+            <a href="/<%= recipe._id %>/edit"><button>Edit Recipe</button></a>
+            <form action="/<%= recipe.id %>?_method=DELETE" method="post">
+              <input type="submit" value="Delete Recipe" />
+            </form>
+          </div>
         </div>
       </div>
     </main>
