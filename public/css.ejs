@@ -214,19 +214,41 @@ text, basics - #18191C -->
   /**********FORM PAGES****************/
   /*/////////////////////////////////*/
 
-  input[type="text"] {
-    font-style: bold;
-    font-size: 18px;
-    align-items: center;
+  legend {
+    font-size: 26px;
+    font-weight: 700;
   }
 
   fieldset {
     display: flex;
     flex-direction: column;
-    border: 3px solid #582323;
+    background-color: #d8d7d5;
+    border: 2px solid #3e8e6b;
+    border-radius: 15px;
+    padding: 20px;
     font-size: 18px;
-    font-weight: thin 400;
+    font-weight: 400;
+    margin-bottom: 20px;
   }
+
+  label {
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  input[type="text"] {
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px 0;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  /* #big-input {
+    min-height: 40px;
+    line-height: 20px;
+    word-wrap: normal;
+  } */
 
   form,
   input {
@@ -234,11 +256,22 @@ text, basics - #18191C -->
     flex-direction: column;
   }
 
+  input[type="text"] #big-input {
+    height: 200px;
+    word-wrap: normal;
+  }
+
   /*/////////////////////////////////*/
   /*/////////////////////////////////*/
   /**********RESPONSIVENESS***********/
   /*/////////////////////////////////*/
   /*/////////////////////////////////*/
+
+  @media screen and (max-width: 1500px) {
+    #actions {
+      flex-direction: column;
+    }
+  }
 
   @media screen and (max-width: 1200px) {
     #recipe-container {
@@ -278,10 +311,6 @@ text, basics - #18191C -->
     }
     #left-side {
       align-items: center;
-    }
-
-    #actions {
-      flex-direction: column;
     }
   }
 
