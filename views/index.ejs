@@ -7,13 +7,19 @@
             <% for (let i=0; i<recipes.length; i++) { %>
                 <a href="/<%= recipes[i]._id %>">
                     <div id="one-recipe">
-                        <% if (recipes[i].img != null && recipes[i].img != ""){ %>
-                        <img src="<%= recipes[i].img %>">
-                        <%} else {%>
-                            <div id="noImg">
-                              no image
-                            </div>
-                          <% }%>
+                      <% if (recipes[i].img != null && recipes[i].img != ""){ %>
+                        <img src="<%= recipes[i].img %>" />
+                        <%} else {%> <% let square = Math.round(Math.random() * 4)%> <% if (square ===
+                        2 || square === 4) {%>
+                        <div class="noImg" id="seventyfive-opacity"></div>
+                        
+                        <% } else if (square ===3){ %>
+                        <div class="noImg" id="sixty-opacity"></div>
+                        
+                        <% } else {%>
+                        <div class="noImg"></div>
+                        
+                        <%}%> <% } %>
                         <h2><%= recipes[i].name %></h2>
                     </div>
                 </a>
