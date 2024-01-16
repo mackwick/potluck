@@ -1,6 +1,7 @@
 //DEPENDENCIES
 const express = require("express");
 const Recipe = require("../models/Recipe");
+const authMiddleware = require("./authmiddleware");
 
 //ROUTER
 const router = express.Router();
@@ -101,18 +102,18 @@ router.get("/", async (req, res) => {
 });
 
 //NEW
-router.get("/new", (req, res) => {
+router.get("/new", authMiddleware, (req, res) => {
   res.render("new.ejs");
 });
 
 //DELETE
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authMiddleware, async (req, res) => {
   await Recipe.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });
 
 //UPDATE
-router.put("/:id", async (req, res) => {
+router.put("/:id", authMiddleware, async (req, res) => {
   try {
     const id = req.params.id;
     await Recipe.findByIdAndUpdate(id, req.body);
@@ -135,7 +136,7 @@ router.post("/", async (req, res) => {
 });
 
 //EDIT
-router.get("/:id/edit", async (req, res) => {
+router.get("/:id/edit", authMiddleware, async (req, res) => {
   try {
     const id = req.params.id;
     const editRecipe = await Recipe.findById(id);

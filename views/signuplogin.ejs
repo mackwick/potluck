@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs")%>
+  <body>
+    <%- include("./partials/header.ejs")%>
+    <main id="user">
+      <fieldset>
+        <legend>Create an Account</legend>
+        <form action="/user/signup" method="post">
+          <label>Username: <input type="text" name="username" /></label>
+          <label>Password: <input type="password" name="password" /></label>
+          <button>Create Account</button>
+        </form>
+      </fieldset>
+
+      <fieldset>
+        <legend>Login</legend>
+        <form action="/user/login" method="post">
+          <label>Username: <input type="text" name="username" /></label>
+          <label>Password: <input type="password" name="password" /></label>
+          <button>Login</button>
+        </form>
+      </fieldset>
+    </main>
+  </body>
+</html>
