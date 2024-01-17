@@ -2,6 +2,7 @@
 const express = require("express");
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
+const Recipe = require("../models/Recipe");
 
 //ROUTER
 const router = express.Router();
@@ -12,7 +13,22 @@ router.get("/forms", (req, res) => {
   res.render("signuplogin.ejs");
 });
 
-//SIGNUP - PROCESS FORM
+// //SIGNUP - PROCESS FORM
+// router.post("/signup", async (req, res) => {
+//   try {
+//     req.body.password = await bcrypt.hash(
+//       req.body.password,
+//       await bcrypt.genSalt(10)
+//     );
+//     await User.create(req.body);
+//     res.redirect("/user/forms");
+//   } catch (error) {
+//     res.status(400).send("There was an error. Check logs for details");
+//     console.log(error.message);
+//   }
+// });
+
+//SIGNUP - PROCESS FORM + SEED
 router.post("/signup", async (req, res) => {
   try {
     req.body.password = await bcrypt.hash(
@@ -20,6 +36,19 @@ router.post("/signup", async (req, res) => {
       await bcrypt.genSalt(10)
     );
     await User.create(req.body);
+    const recipes = await Recipe.find({ username: "seed" });
+    const myRecipes = recipes.map((v) => ({
+      name: v.name,
+      img: v.img,
+      img2: v.img2,
+      ingredients: v.ingredients,
+      instructions: v.instructions,
+      link: v.link,
+      notes: v.notes,
+      username: req.body.username,
+    }));
+    // res.json(myRecipes);
+    await Recipe.create(myRecipes);
     res.redirect("/user/forms");
   } catch (error) {
     res.status(400).send("There was an error. Check logs for details");

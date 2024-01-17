@@ -13,6 +13,7 @@ const recipeSchema = new Schema({
   instructions: { type: String, required: false },
   link: { type: String, required: false },
   notes: { type: String, required: false },
+  username: String,
 });
 
 //Create Model
