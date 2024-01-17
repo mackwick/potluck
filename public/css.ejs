@@ -55,10 +55,14 @@ text, basics - #18191C -->
     text-decoration: none;
   }
 
-  nav {
+  nav #menu {
     display: flex;
     flex-direction: column;
     justify-content: right;
+  }
+
+  nav #hamburger {
+    display: none;
   }
 
   #recipe-container {
@@ -321,6 +325,50 @@ text, basics - #18191C -->
   @media screen and (max-width: 720px) {
     #recipe-container {
       columns: 3;
+    }
+
+    /* MAKE CHECKBOX INVISIBLE (click on label will toggle it) */
+    #hamburger-toggle {
+      display: none;
+    }
+
+    /* Make divs in label look like a hamburger icon*/
+    #hamburger .hamburger-line {
+      width: 15px;
+      border: 2px solid black;
+      margin: 2px auto;
+    }
+
+    /* Position Hamburger in the upper right */
+    #hamburger {
+      position: fixed;
+      top: 2px;
+      right: 2px;
+    }
+
+    /* Make the Hamburger Feel Clickable */
+    #hamburger:hover {
+      background-color: darkseagreen;
+      cursor: pointer;
+    }
+
+    /* Menus Mobile Appearance */
+    #menu {
+      justify-content: center;
+      align-items: center;
+      padding: 6px;
+      background-color: cadetblue;
+      /* position the menu off screen */
+      position: fixed;
+      top: 25px;
+      /* right: -200px; */
+      /* transition to animate entrance */
+      transition: right 0.4s;
+    }
+
+    /* Make the Menu Toggle when Click Label (label triggers associated "for" checkbox) */
+    nav:has(#hamburger-toggle:checked) #menu {
+      right: 0;
     }
   }
 
