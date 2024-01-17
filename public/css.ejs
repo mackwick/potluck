@@ -55,13 +55,13 @@ text, basics - #18191C -->
     text-decoration: none;
   }
 
-  nav #menu {
+  #reg-menu {
     display: flex;
     flex-direction: column;
     justify-content: right;
   }
 
-  nav #hamburger {
+  #hamburger-toggle {
     display: none;
   }
 
@@ -284,11 +284,6 @@ text, basics - #18191C -->
       columns: 4;
     }
 
-    h1 {
-      font-size: 40px;
-      font-weight: 900;
-    }
-
     main #show-container {
       width: 90dvw;
       max-height: none;
@@ -308,7 +303,7 @@ text, basics - #18191C -->
     }
 
     #show-container h2 {
-      border-top: 4px solid #582323;
+      border-top: 4px solid #705f81;
     }
 
     #left-side,
@@ -327,48 +322,66 @@ text, basics - #18191C -->
       columns: 3;
     }
 
-    /* MAKE CHECKBOX INVISIBLE (click on label will toggle it) */
+    #reg-menu {
+      background-color: #705f81;
+      color: whitesmoke;
+      height: 100vh;
+      width: 100%;
+      max-width: 450px;
+      position: fixed;
+      top: 0;
+      right: -450px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 3rem;
+      transition: 0.3s ease;
+    }
+
+    nav:has(#hamburger-toggle:checked) #reg-menu {
+      right: 0;
+    }
+
+    nav {
+      padding: 1rem;
+      display: flex;
+    }
+
     #hamburger-toggle {
       display: none;
     }
 
-    /* Make divs in label look like a hamburger icon*/
-    #hamburger .hamburger-line {
-      width: 15px;
-      border: 2px solid black;
-      margin: 2px auto;
+    #ham-menu {
+      /* border: 2px solid black; */
+      height: 50px;
+      width: 50px;
+      margin-left: auto;
+      position: relative;
     }
 
-    /* Position Hamburger in the upper right */
-    #hamburger {
-      position: fixed;
-      top: 2px;
-      right: 2px;
+    #ham-menu span {
+      height: 5px;
+      width: 100%;
+      border-radius: 25px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #3e8e6b;
+      transform: translate(-50%, -50%);
+      transition: 0.3s ease;
     }
 
-    /* Make the Hamburger Feel Clickable */
+    #ham-menu span:nth-child(1) {
+      top: 25%;
+    }
+
+    #ham-menu span:nth-child(3) {
+      top: 75%;
+    }
+
     #hamburger:hover {
       background-color: darkseagreen;
       cursor: pointer;
-    }
-
-    /* Menus Mobile Appearance */
-    #menu {
-      justify-content: center;
-      align-items: center;
-      padding: 6px;
-      background-color: cadetblue;
-      /* position the menu off screen */
-      position: fixed;
-      top: 25px;
-      /* right: -200px; */
-      /* transition to animate entrance */
-      transition: right 0.4s;
-    }
-
-    /* Make the Menu Toggle when Click Label (label triggers associated "for" checkbox) */
-    nav:has(#hamburger-toggle:checked) #menu {
-      right: 0;
     }
   }
 
@@ -380,8 +393,8 @@ text, basics - #18191C -->
     }
 
     h1 {
-      font-size: 32px;
-      font-weight: 900;
+      font-size: 60px;
+      margin-top: 10px;
     }
 
     main #show-container {
@@ -390,6 +403,13 @@ text, basics - #18191C -->
 
     #show-container img {
       width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    h1 {
+      font-size: 45px;
+      margin-top: 15px;
     }
   }
 </style>
