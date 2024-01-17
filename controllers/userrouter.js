@@ -13,21 +13,6 @@ router.get("/forms", (req, res) => {
   res.render("signuplogin.ejs");
 });
 
-// //SIGNUP - PROCESS FORM
-// router.post("/signup", async (req, res) => {
-//   try {
-//     req.body.password = await bcrypt.hash(
-//       req.body.password,
-//       await bcrypt.genSalt(10)
-//     );
-//     await User.create(req.body);
-//     res.redirect("/user/forms");
-//   } catch (error) {
-//     res.status(400).send("There was an error. Check logs for details");
-//     console.log(error.message);
-//   }
-// });
-
 //SIGNUP - PROCESS FORM + SEED
 router.post("/signup", async (req, res) => {
   try {
