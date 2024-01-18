@@ -48,6 +48,7 @@ text, basics - #18191C -->
   h1 {
     font-size: 72px;
     font-weight: 900;
+    cursor: pointer;
   }
 
   a {
@@ -59,6 +60,10 @@ text, basics - #18191C -->
     display: flex;
     flex-direction: column;
     justify-content: right;
+  }
+
+  #reg-menu > a:hover {
+    color: #705f81;
   }
 
   #hamburger-toggle {
@@ -93,6 +98,11 @@ text, basics - #18191C -->
     padding: 10px;
   }
 
+  #recipe-container #one-recipe:hover {
+    background-color: #d9dcd9;
+    color: #705f81;
+  }
+
   #recipe-container #one-recipe img {
     border-radius: 10px;
     height: 70%;
@@ -105,6 +115,7 @@ text, basics - #18191C -->
     height: 200px;
     width: 80%;
     background-color: #705f81;
+    opacity: 98%;
   }
 
   #recipe-container #seventyfive-opacity {
@@ -200,6 +211,12 @@ text, basics - #18191C -->
     color: #3e8e6b;
     justify-content: center;
     align-items: center;
+  }
+
+  button:hover,
+  input[type="submit"]:hover {
+    background-color: #eff1ef;
+    color: #705f81;
   }
 
   #actions > input[type="submit"] {
