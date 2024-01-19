@@ -50,6 +50,7 @@ router.put("/:id", authMiddleware, async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newRecipe = await Recipe.create(req.body);
+    newRecipe.username = req.session.username;
     res.redirect("/");
   } catch (error) {
     res.status(400).send("There was an error. Check logs for details");
