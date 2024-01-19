@@ -9,7 +9,7 @@
 
 ## List of Dependencies
 
-##### Node Dependencies (package.json)
+##### Node Dependencies
 
 - bcrypt
 - connect-mongo
@@ -21,10 +21,9 @@
 - mongoose
 - morgan
 
-##### Frontend (if used, ex. jquery, alpine, bootstrap, htmx, etc.)
+##### Frontend
 
-- Alpine or HTMX (probably)
-- jQuery (probably)
+- CSS
 
 ## Route Map
 
