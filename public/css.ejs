@@ -308,6 +308,7 @@ text, basics - #18191C -->
     #reg-menu {
       background-color: #3e8e6b;
       color: whitesmoke;
+      z-index: 1;
       height: 100vh;
       width: 100%;
       max-width: 450px;
@@ -405,6 +406,12 @@ text, basics - #18191C -->
   @media screen and (max-width: 1000px) {
     #recipe-container {
       columns: 3;
+    }
+
+    textarea {
+      min-height: 24px;
+      line-height: 12px;
+      font-size: 12px;
     }
   }
 

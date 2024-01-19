@@ -36,7 +36,7 @@ router.post("/signup", async (req, res) => {
     await Recipe.create(myRecipes);
     res.redirect("/user/forms");
   } catch (error) {
-    res.status(400).send("There was an error. Check logs for details");
+    res.status(400).render("error.ejs");
     console.log(error.message);
   }
 });
@@ -57,7 +57,7 @@ router.post("/login", async (req, res) => {
     req.session.username = username;
     res.redirect("/");
   } catch (error) {
-    res.status(400).send("There was an error. Check logs for details");
+    res.status(400).render("error.ejs");
     console.log(error.message);
   }
 });
