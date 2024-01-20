@@ -6,16 +6,16 @@
     <main>
       <div id="show-container">
         <div id="left-side">
-          <% if(recipe.img != null && recipe.img != "") { %>
+          <% if(recipe.img) { %>
           <img src="<%= recipe.img %>" />
-          <% } %> <% if(recipe.img2 != null && recipe.img2 != "") { %>
+          <% } %> <% if(recipe.img2) { %>
           <img src="<%= recipe.img2 %>" />
           <% } %>
         </div>
 
         <div id="right-side">
           <h2><%= recipe.name %></h2>
-          <% if(recipe.ingredients != null && recipe.ingredients != "") { %>
+          <% if(recipe.ingredients) { %>
           <h6>Ingredients</h6>
           <ul id="ingredients">
             <% const ingArr = recipe.ingredients.split(", "); %> <%
@@ -23,8 +23,7 @@
             <li><%= ing %></li>
             <% }); %>
           </ul>
-          <% } %> <% if(recipe.instructions != null && recipe.instructions !=
-          "") { %>
+          <% } %> <% if(recipe.instructions) { %>
           <h6>Instructions</h6>
           <ol id="instructions">
             <% const instArr = recipe.instructions.split("; "); %> <%
@@ -32,11 +31,11 @@
             <li><%= inst %></li>
             <% }); %>
           </ol>
-          <% } %> <% if(recipe.link != null && recipe.link != "") { %>
+          <% } %> <% if(recipe.link) { %>
           <a href="<%= recipe.link %>" target="_blank"
             ><h6 id="color">Full Recipe Here.</h6></a
           >
-          <% } %> <% if(recipe.notes != null && recipe.notes != "") { %>
+          <% } %> <% if(recipe.notes) { %>
           <h6>Some thoughts</h6>
           <p><%= recipe.notes %></p>
           <% } %>
