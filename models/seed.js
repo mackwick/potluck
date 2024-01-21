@@ -181,7 +181,7 @@ mongoose.connection.on("open", async () => {
         img2: "",
         ingredients: "",
         instructions: "",
-        link: "https://charlestonwineandfood.com/wp-content/uploads/2020/01/IMG_FCC7491F3CE3-1.jpeg",
+        link: "https://charlestonwineandfood.com/2020/01/29/super-bowl-recipe-cauliflower-wings",
         notes: "",
         username: "seed",
       },

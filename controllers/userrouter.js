@@ -34,7 +34,9 @@ router.post("/signup", async (req, res) => {
     }));
     // res.json(myRecipes);
     await Recipe.create(myRecipes);
-    res.redirect("/user/forms");
+    req.session.loggedIn = true;
+    req.session.username = req.body.username;
+    res.redirect("/");
   } catch (error) {
     res.status(400).render("error.ejs");
     console.log(error.message);

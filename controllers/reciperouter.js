@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
       res.render("index.ejs", { recipes });
     }
   } catch (error) {
-    res.status(400).send("There was an error. Check logs for details");
+    res.status(400).render("error.ejs");
     console.log(error.message);
   }
 });
@@ -41,7 +41,7 @@ router.put("/:id", authMiddleware, async (req, res) => {
     await Recipe.findByIdAndUpdate(id, req.body);
     res.redirect("/");
   } catch (error) {
-    res.status(400).send("There was an error. Check logs for details");
+    res.status(400).render("error.ejs");
     console.log(error.message);
   }
 });
@@ -54,7 +54,7 @@ router.post("/", async (req, res) => {
     // res.json(newRecipe);
     res.redirect("/");
   } catch (error) {
-    res.status(400).send("There was an error. Check logs for details");
+    res.status(400).render("error.ejs");
     console.log(error.message);
   }
 });
@@ -66,7 +66,7 @@ router.get("/:id/edit", authMiddleware, async (req, res) => {
     const editRecipe = await Recipe.findById(id);
     res.render("edit.ejs", { editRecipe });
   } catch (error) {
-    res.status(400).send("There was an error. Check logs for details");
+    res.status(400).render("error.ejs");
     console.log(error.message);
   }
 });
@@ -78,7 +78,7 @@ router.get("/:id", async (req, res) => {
     const recipe = await Recipe.findById(id);
     res.render("show.ejs", { recipe });
   } catch (error) {
-    res.status(400).send("There was an error. Check logs for details");
+    res.status(400).render("error.ejs");
     console.log(error.message);
   }
 });
